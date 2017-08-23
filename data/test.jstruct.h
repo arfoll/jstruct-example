@@ -6,6 +6,23 @@
 #include <jstruct/error.h>
 
 //@json
+struct _i2c {
+    int busnum;
+    int fh;
+    int addr;
+    uint32_t funcs;
+//    void* handle;
+//    void* advance_func;
+};
+
+//@json
+struct my_json_i2c {
+    // import all the members of foreign_struct so that this struct definition matches it.
+    // @inline
+    struct _i2c dev;
+};
+
+//@json
 struct my_json_data {
     /*
     @schema {
